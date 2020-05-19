@@ -1,4 +1,5 @@
-<%--
+<%@ page import="service.ItemService" %>
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: dat
   Date: 19/05/2020
@@ -91,24 +92,24 @@
   <hr>
   <div class="title-content"><h2>NEW CLOTHES</h2></div>
   <div class="row content">
-<%--    <% DBItem dbItem = new DBItem();--%>
-<%--      ResultSet listItem = dbItem.getListItem();%>--%>
-<%--    <% while (listItem.next()) {%>--%>
-<%--    <div class="col-xl-2 col-lg-3 col-md-6 col-12">--%>
-<%--      <form action="/cart" method="post">--%>
-<%--        <div class="card" style="width: 16rem;">--%>
-<%--          <img src="../img/<%=listItem.getString(3)%>" class="card-img-top" width="15rem"; height="200px" alt="">--%>
-<%--          <div class="card-body">--%>
-<%--            <p ><input type="hidden" name="itemID" value="<%=listItem.getString(1)%>"> </p>--%>
-<%--            <p> Name : <%=listItem.getString(2)%></p>--%>
-<%--            <p> Price : <%=listItem.getString(4)%></p>--%>
-<%--            <p> Amount : <%=listItem.getString(5)%></p>--%>
-<%--            <button type="submit" name="action" value="add-to-cart" class="btn btn-primary">AddCart</button>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-<%--      </form>--%>
-<%--    </div>--%>
-<%--    <%}%>--%>
+    <% ItemService itemService = new ItemService();
+      ResultSet listItem = itemService.getListItem();%>
+    <% while (listItem.next()) {%>
+    <div class="col-xl-2 col-lg-3 col-md-6 col-12">
+      <form action="/cart" method="post">
+        <div class="card" style="width: 16rem;">
+          <img src="../img/<%=listItem.getString(3)%>" class="card-img-top" width="15rem"; height="200px" alt="">
+          <div class="card-body">
+            <p ><input type="hidden" name="itemID" value="<%=listItem.getString(1)%>"> </p>
+            <p> Name : <%=listItem.getString(2)%></p>
+            <p> Price : <%=listItem.getString(4)%></p>
+            <p> Amount : <%=listItem.getString(5)%></p>
+            <button type="submit" name="action" value="add-to-cart" class="btn btn-primary">AddCart</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <%}%>
 
 </div>
 
