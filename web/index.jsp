@@ -32,7 +32,7 @@
       <ul>
         <li class="border-bottom-red"><a href="index.jsp">HOME</a></li>
         <li><a href="jsp/login.jsp">LOGIN</a></li>
-        <li><a href="jsp/register.jsp">REGISTER</a></li>
+        <li><a href="/Customers?action=create">REGISTER</a></li>
         <li><a href="jsp/order.jsp">CART</a></li>
         <li class="icon"><a href="https://www.facebook.com/fc.ngoclich"><span class="fa-stack ">
                   <i class="fa fa-circle-thin fa-stack-2x"></i>
