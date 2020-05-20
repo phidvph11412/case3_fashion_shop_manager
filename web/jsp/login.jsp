@@ -46,11 +46,11 @@
             <h2 class="text-primary ">Login</h2>
             <div class="form-group input-form ">
                 <label>User Name :</label>
-                <input type="text" name="userName" class="form-control ">
+                <input type="text" name="name" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Password :</label>
-                <input type="password" name="password" class="form-control ">
+                <input type="password" name="pass" class="form-control ">
             </div>
 
             <button class="btn btn-primary btn-form-submit "

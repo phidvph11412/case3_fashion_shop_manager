@@ -122,7 +122,22 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public List<Customer> searchCustomer(String customerName) throws SQLException {
-        return null;
+        List<Customer> getCustomer = new ArrayList<>();
+        Connection connection = getConnection();
+        String  sql = "{call getFindByName(?)}";
+        CallableStatement callableStatement = connection.prepareCall(sql);
+        String name1 = "%" + customerName + "%";
+        callableStatement.setString(1, name1);
+        ResultSet resultSet = callableStatement.executeQuery();
+        while (resultSet.next()) {
+            String name = resultSet.getString("customerName");
+            String pass = resultSet.getString("customerPass");
+            String phone = resultSet.getString("Phone");
+            String email = resultSet.getString("Email");
+            String address = resultSet.getString("Address");
+            getCustomer.add(new Customer(name, pass, phone, email, address));
+        }
+        return getCustomer;
     }
 
     @Override

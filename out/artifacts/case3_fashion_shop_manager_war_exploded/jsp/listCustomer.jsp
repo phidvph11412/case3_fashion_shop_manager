@@ -40,11 +40,11 @@
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline" method="post" action="/Customers">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" name="name" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" name="action" value="search" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" name="action" value="find" type="submit">Search</button>
             </form>
         </nav>
         <div class="container text-left">
-            <a href="/Customers?action=create" class="btn btn-success">Add New User</a>
+            <a href="/Customers?action=showRegister" class="btn btn-success">Add New User</a>
         </div>
         <br>
         <table class="table table-success table-hover">
