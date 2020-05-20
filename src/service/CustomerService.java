@@ -15,6 +15,7 @@ public class CustomerService implements ICustomerService {
     private static final String DELETE_Customer_SQL = "delete from customer where customerName = ?;";
     private static final String SELECT_CUSTOMER_NAME = "select customerName,customerPass,Phone,Email,Address from customer where customerName = ? ;";
     private static final String UPDATE_CUSTOMER_NAME = "update customer set  customerPass = ?,Phone = ?,Email = ? ,Address = ? where customerName = ?";
+    private static final String SELECT_NAME_PASS = "select customerName,customerPass from customer";
 
     public CustomerService() {
 
@@ -110,12 +111,37 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public boolean deleteCustomer(String customerName) throws SQLException {
-        return false;
+        boolean rowDeleted;
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(DELETE_Customer_SQL);) {
+            statement.setString(1, customerName);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
     }
 
     @Override
     public List<Customer> searchCustomer(String customerName) throws SQLException {
         return null;
+    }
+
+    @Override
+    public List<Customer>  getListUserAndPass() {
+        List<Customer> customers = new ArrayList<>();
+        Connection connection = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_NAME_PASS);
+            System.out.println(preparedStatement);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("customerName");
+                String pass = resultSet.getString("customerPass");
+                customers.add(new Customer(name, pass));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return customers;
     }
 
     private void printSQLException(SQLException ex) {

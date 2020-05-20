@@ -2,6 +2,7 @@ package controller;
 
 import model.Customer;
 import service.CustomerService;
+import validate.ValidateCustomer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
                 break;
             case "edit":
                 try {
-                    update(request,response);
+                    update(request, response);
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
@@ -133,6 +134,15 @@ public class RegisterServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+        String customerName = request.getParameter("name");
+        customerService.deleteCustomer(customerName);
+        List<Customer> listCustomer = customerService.selectAllCustomer();
+        request.setAttribute("listCustomer", listCustomer);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+        dispatcher.forward(request, response);
     }
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         String name = request.getParameter("name");

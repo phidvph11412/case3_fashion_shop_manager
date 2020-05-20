@@ -4,7 +4,7 @@ import model.Item;
 
 import java.sql.ResultSet;
 
-public class ItemService  implements IItem{
+public class ItemService  implements IItemService {
     DAL dal;
 
     public ItemService() {
@@ -31,7 +31,7 @@ public class ItemService  implements IItem{
                 "where itemId = '"+ id +"';" );
     }
 
-    public boolean updateItemByID(String id , Item item) {
+    public boolean editItemByID(String id , Item item) {
         return dal.updateData( "update item " +
                 "set itemId = '"+ item.getItemID() +"', item_name = '"+ item.getItemName() +"' , image = '"+ item.getItemImage() +"' , price = "+ item.getItemPrice() +", amount = "+ item.getItemAmount() +", catelory = '"+ item.getItemCategory() +"', describes = '"+ item.getItemDescribe() +"' " +
                 " where itemId = '"+ id +"';");
