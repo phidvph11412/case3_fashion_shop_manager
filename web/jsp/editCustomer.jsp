@@ -69,7 +69,7 @@
                 <input value="${customers.getCustomerAddress()}" type="text" name="address" rows="3"  class="form-control " >
             </div>
             <button class="btn btn-primary btn-form-submit "
-                    type="submit" name="action" value="create">register
+                    type="submit" name="action" value="edit">EDIT
             </button>
         </form>
     </main>

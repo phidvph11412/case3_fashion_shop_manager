@@ -69,12 +69,43 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer selectCustomer(String customerName) {
-        return null;
+        Customer customer = null;
+        Connection connection = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_NAME);
+            preparedStatement.setString(1, customerName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("customerName");
+                String pass = resultSet.getString("customerPass");
+                String phone = resultSet.getString("Phone");
+                String email = resultSet.getString("Email");
+                String address = resultSet.getNString("Address");
+                customer = new Customer(name, pass, phone, email, address);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return customer;
     }
 
     @Override
     public boolean updateCustomer(Customer customer) throws SQLException {
-        return false;
+        boolean rowUpdate = false;
+        Connection connection = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER_NAME);
+            preparedStatement.setString(5, customer.getCustomerName());
+            preparedStatement.setString(1, customer.getCustomerPassword());
+            preparedStatement.setString(2, customer.getCustomerPhoneNumber());
+            preparedStatement.setString(3, customer.getCustomerEmail());
+            preparedStatement.setString(4, customer.getCustomerAddress());
+            rowUpdate = preparedStatement.executeUpdate() > 0;
+            System.out.println(preparedStatement);
+        } catch (SQLException ex) {
+            printSQLException(ex);
+        }
+        return rowUpdate;
     }
 
     @Override

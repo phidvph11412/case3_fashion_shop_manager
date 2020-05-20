@@ -69,7 +69,7 @@
                     <td><c:out value="${customer.getCustomerEmail()}"/></td>
                     <td><c:out value="${customer.getCustomerAddress()}"/></td>
                     <td>
-                        <a href="/Customers?action=edit&name=${customer.customerName}"> Edit</a>
+                        <a href="/Customers?action=editCustomer&name=${customer.customerName}"> Edit</a>
                         <br>
                         <a href="/Customers?action=delete&name=${customer.customerName}"> Delete </a>
                     </td>
