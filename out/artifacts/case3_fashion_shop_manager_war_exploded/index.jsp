@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page import="service.ItemService" %>
 <%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
@@ -155,7 +155,7 @@
             </ul>
         </div>
         <div class="copy-right">
-            <p>Copyrigh 2020 All rights reserved - phi dao <br> Powered By SITE123-Website creator</p>
+            <p>Copyright 2020 All rights reserved - phi dao <br> Powered By SITE123-Website creator</p>
         </div>
     </div>
 
@@ -171,6 +171,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script src="../js/home.js"></script>
+
 </body>
 </html>
