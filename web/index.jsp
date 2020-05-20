@@ -97,7 +97,7 @@
     <hr>
     <div class="title-content"><h2>NEW CLOTHES</h2></div>
     <div class="row content">
-        <% ItemService itemService = new ItemService();
+       <%-- <% ItemService itemService = new ItemService();
             ResultSet items = itemService.getListItem(); %>
         <% while (items.next()) {%>
         <div class="col-xl-2 col-lg-3 col-md-6 col-12">
@@ -118,7 +118,7 @@
                 </div>
             </form>
         </div>
-        <%}%>
+        <%}%>--%>
 
     </div>
 

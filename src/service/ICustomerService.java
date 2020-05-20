@@ -18,4 +18,6 @@ public interface ICustomerService {
     boolean deleteCustomer(String customerName) throws SQLException;
 
     List<Customer> searchCustomer(String customerName) throws SQLException;
+
+    public List<Customer> getListUserAndPass();
 }
