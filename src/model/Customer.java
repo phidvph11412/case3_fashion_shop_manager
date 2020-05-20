@@ -7,6 +7,9 @@ public class Customer {
     private String customerEmail;
     private String customerAddress;
 
+    public Customer() {
+
+    }
 
     public Customer(String name, String password, String phoneNumber, String email, String address) {
         this.customerName = name;
@@ -57,6 +60,4 @@ public class Customer {
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
     }
-
-
 }

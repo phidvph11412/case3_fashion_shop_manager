@@ -42,23 +42,23 @@
         </div>
     </header>
     <main class="content">
-        <form action="/register" method="post" class="form-group form" >
+        <form method="post" action="/Customers" class="form-group form">
             <h2 class="text-primary ">Register</h2>
             <div class="form-group input-form ">
                 <label>User Name :</label>
-                <input type="text" name="userName" class="form-control ">
+                <input type="text" name="name" class=" form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Password :</label>
-                <input type="password" name="password" class="form-control ">
+                <input type="password" name="pass" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Re Password :</label>
-                <input type="password" name="rePassword" class="form-control ">
+                <input type="password" name="" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Phone Number : </label>
-                <input type="text" name="phoneNumber" class="form-control ">
+                <input type="text" name="phone" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Email :</label>
@@ -69,7 +69,7 @@
                 <textarea type="text" name="address" rows="3" class="form-control "></textarea>
             </div>
             <button class="btn btn-primary btn-form-submit "
-                    type="submit">REGISTER
+                    type="submit" name="action" value="create">register
             </button>
         </form>
     </main>
@@ -81,9 +81,10 @@
                 Hanoi, Vietnam<br>
                 999-7777-000<br>
                 daovanphi25051994@gmail.com
+                lebadat1996ptit@gmail.com
             </div>
             <div class="customer-information col-xl-6">
-                <form action="#" method="post">
+                <form action="#" method="">
                     <input id="customer-name" type="text" name="name" placeholder="Name">
                     <input id="customer-phone" type="text" name="phoneNumber" placeholder="Phone"><br>
                     <input id="customer-email" type="text" name="emailAddress" placeholder="Email Address"><br>
