@@ -54,7 +54,7 @@
             </div>
             <div class="form-group input-form ">
                 <label>Re Password :</label>
-                <input type="password" name="" class="form-control ">
+                <input type="password" name="repass" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Phone Number : </label>
