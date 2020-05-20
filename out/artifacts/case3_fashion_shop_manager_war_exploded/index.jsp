@@ -101,7 +101,7 @@
             ResultSet items = itemService.getListItem(); %>
         <% while (items.next()) {%>
         <div class="col-xl-2 col-lg-3 col-md-6 col-12">
-            <form action="/cart" method="post">
+            <form action="/add-cart" method="post">
                 <div class="card" style="width: 16rem;">
                     <img src="../img/<%=items.getString(3)%>" class="card-img-top" width="15rem" ; height="200px"
                          alt="">

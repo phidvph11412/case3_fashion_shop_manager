@@ -2,6 +2,7 @@ package controller;
 
 import model.Item;
 import service.ItemService;
+import validate.ValidateItem;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,40 +33,64 @@ public class ItemAdminServlet extends HttpServlet {
 
     private void addItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ItemService itemService = new ItemService();
+        ValidateItem validateItem = new ValidateItem();
         String itemID = request.getParameter("itemID");
         String itemName = request.getParameter("itemName");
         String itemImage = request.getParameter("itemImage");
-        float itemPrice = Float.valueOf(request.getParameter("itemPrice"));
-        int itemAmount = Integer.valueOf(request.getParameter("itemAmount"));
+        String itemPrice = (request.getParameter("itemPrice"));
+        String itemAmount = (request.getParameter("itemAmount"));
         String itemCategory = request.getParameter("itemCategory");
         String itemDescribe = request.getParameter("itemDescribe");
-        Item item = new Item(itemID, itemName, itemImage, itemPrice, itemAmount, itemCategory, itemDescribe);
-        boolean isSaved = itemService.saveDataItem(item);
-        if (isSaved) {
-            request.setAttribute("message", "save successfully");
-        } else {
-            request.setAttribute("message", "save not successfully");
+        boolean isItem = validateItem.isItem(itemID, itemName, itemImage, itemPrice, itemAmount, itemCategory, itemDescribe);
+        if (isItem) {
+            float price = Float.valueOf(itemPrice);
+            int amount = Integer.valueOf(itemAmount);
+            Item item = new Item(itemID, itemName, itemImage, price, amount, itemCategory, itemDescribe);
+            boolean isSaved = itemService.saveDataItem(item);
+            if (isSaved) {
+                request.setAttribute("message", "save successfully");
+            } else {
+                request.setAttribute("message", "save not successfully . Item id  already exists !");
+            }
+            request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
+        }else {
+            request.setAttribute("message", "input invalid");
+            request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
+
+
+
     }
 
     private void editItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ItemService itemService = new ItemService();
+        ValidateItem validateItem = new ValidateItem();
         String itemID = request.getParameter("itemID");
         String itemName = request.getParameter("itemName");
         String itemImage = request.getParameter("itemImage");
-        float itemPrice = Float.valueOf(request.getParameter("itemPrice"));
-        int itemAmount = Integer.valueOf(request.getParameter("itemAmount"));
+        String itemPrice = request.getParameter("itemPrice");
+        String itemAmount = request.getParameter("itemAmount");
         String itemCategory = request.getParameter("itemCategory");
         String itemDescribe = request.getParameter("itemDescribe");
-        Item item = new Item(itemID, itemName, itemImage, itemPrice, itemAmount, itemCategory, itemDescribe);
-        boolean isEdited = itemService.editItemByID(itemID, item);
-        if (isEdited) {
-            request.setAttribute("message", "edit successfully");
-        } else {
-            request.setAttribute("message", "edit not successfully");
+        boolean isItem = validateItem.isItem(itemID, itemName, itemImage, itemPrice, itemAmount, itemCategory, itemDescribe);
+        if (isItem){
+            float price = Float.valueOf(itemPrice);
+            int amount = Integer.valueOf(itemAmount);
+            Item item = new Item(itemID, itemName, itemImage, price, amount, itemCategory, itemDescribe);
+            boolean isEdited = itemService.editItemByID(itemID, item);
+            if (isEdited) {
+                request.setAttribute("message", "edit successfully");
+            } else {
+                request.setAttribute("message", "edit not successfully , id not found!!");
+            }
+            request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
+        }else {
+            request.setAttribute("message", "input  invalid");
+            request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
+
+
+
     }
 
     private void deleteItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -75,7 +100,7 @@ public class ItemAdminServlet extends HttpServlet {
         if (isDeleted) {
             request.setAttribute("message", "delete successfully");
         } else {
-            request.setAttribute("message", "delete not successfully . item already exists in shopping cart");
+            request.setAttribute("message", "delete not successfully . item already exists in shopping cart or id not found!!");
         }
         request.getRequestDispatcher("jsp/admin/item.jsp").forward(request, response);
     }

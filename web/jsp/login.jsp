@@ -57,6 +57,7 @@
                     type="submit">LOGIN
             </button>
         </form>
+        <span>${message}</span>
     </main>
 
     <div class="contact " id="footer-contact">
