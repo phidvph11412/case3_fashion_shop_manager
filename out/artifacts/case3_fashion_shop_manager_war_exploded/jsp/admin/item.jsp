@@ -66,8 +66,8 @@
     <hr>
     <div class="content row">
         <div class="col-xl-9 col-lg-8 col-md-7 col-sm-6 col-6 row">
-            <% ItemService dbItem = new ItemService();
-                ResultSet listItem = dbItem.getListItem();%>
+            <% ItemService itemService = new ItemService();
+                ResultSet listItem = itemService.getListItem();%>
             <% while (listItem.next()) {%>
             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
                 <form action="/item-update" method="post">

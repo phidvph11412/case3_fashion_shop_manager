@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page import="service.ItemService" %>
 <%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
@@ -30,7 +30,7 @@
             <h1><a href="index.jsp">LOGO</a></h1>
         </div>
         <div class="col-xl-4"><span class="user-name"
-                                    style="line-height: 90px;color: #eb6d6c">${message}${userName}</span></div>
+                                    style="line-height: 90px;color: #eb6d6c">${userName}</span></div>
         <div class="col-xl-4 menu">
             <ul>
                 <li class="border-bottom-red"><a href="index.jsp">HOME</a></li>
@@ -97,11 +97,11 @@
     <hr>
     <div class="title-content"><h2>NEW CLOTHES</h2></div>
     <div class="row content">
-       <%-- <% ItemService itemService = new ItemService();
+        <% ItemService itemService = new ItemService();
             ResultSet items = itemService.getListItem(); %>
         <% while (items.next()) {%>
         <div class="col-xl-2 col-lg-3 col-md-6 col-12">
-            <form action="/cart" method="post">
+            <form action="/add-cart" method="post">
                 <div class="card" style="width: 16rem;">
                     <img src="../img/<%=items.getString(3)%>" class="card-img-top" width="15rem" ; height="200px"
                          alt="">
@@ -118,7 +118,7 @@
                 </div>
             </form>
         </div>
-        <%}%>--%>
+        <%}%>
 
     </div>
 
@@ -155,7 +155,7 @@
             </ul>
         </div>
         <div class="copy-right">
-            <p>Copyrigh 2020 All rights reserved - phi dao <br> Powered By SITE123-Website creator</p>
+            <p>Copyright 2020 All rights reserved - phi dao <br> Powered By SITE123-Website creator</p>
         </div>
     </div>
 
@@ -171,6 +171,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script src="../js/home.js"></script>
+
 </body>
 </html>
