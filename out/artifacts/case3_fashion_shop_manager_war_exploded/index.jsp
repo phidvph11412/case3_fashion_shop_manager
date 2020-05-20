@@ -30,7 +30,7 @@
             <h1><a href="index.jsp">LOGO</a></h1>
         </div>
         <div class="col-xl-4"><span class="user-name"
-                                    style="line-height: 90px;color: #eb6d6c">${message}${userName}</span></div>
+                                    style="line-height: 90px;color: #eb6d6c">${userName}</span></div>
         <div class="col-xl-4 menu">
             <ul>
                 <li class="border-bottom-red"><a href="index.jsp">HOME</a></li>

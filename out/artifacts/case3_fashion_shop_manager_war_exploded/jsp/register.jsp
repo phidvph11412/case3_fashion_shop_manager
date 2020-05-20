@@ -46,11 +46,11 @@
             <h2 class="text-primary ">Register</h2>
             <div class="form-group input-form ">
                 <label>User Name :</label>
-                <input type="text" name="name" class=" form-control ">
+                <input type="text" name="name" value="${customers.getCustomerName()}" class=" form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Password :</label>
-                <input type="password" name="pass" class="form-control ">
+                <input type="password" name="pass"  value="${customers.getCustomerPassword()}" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Re Password :</label>
@@ -58,15 +58,15 @@
             </div>
             <div class="form-group input-form ">
                 <label>Phone Number : </label>
-                <input type="text" name="phone" class="form-control ">
+                <input type="text" name="phone" value="${customers.getCustomerPhoneNumber()}" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Email :</label>
-                <input type="email" name="email" class="form-control ">
+                <input type="email" name="email"value="${customers.getCustomerEmail()}" class="form-control ">
             </div>
             <div class="form-group textarea-form ">
                 <label>Address :</label>
-                <textarea type="text" name="address" rows="3" class="form-control "></textarea>
+                <input value="${customers.getCustomerAddress()}" type="text" name="address" rows="3"  class="form-control " >
             </div>
             <button class="btn btn-primary btn-form-submit "
                     type="submit" name="action" value="create">register

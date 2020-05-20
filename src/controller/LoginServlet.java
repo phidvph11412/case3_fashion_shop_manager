@@ -1,5 +1,7 @@
 package controller;
 
+import model.Customer;
+import service.CustomerService;
 import service.ItemService;
 
 import javax.servlet.RequestDispatcher;
@@ -12,26 +14,24 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        CustomerService customerService = new CustomerService();
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        ResultSet listNameAndPassCustomer =
-        while (true){
-            try {
-                if (!listNameAndPassCustomer.next()) break;
-                if (userName.equals(listNameAndPassCustomer.getString(1)) && password.equals(listNameAndPassCustomer.getString(2))){
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-                    HttpSession session = request.getSession();
-                    session.setAttribute("userName", userName);
-                    requestDispatcher.forward(request, response);
-                }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-        }
+        List<Customer> listNameAndPassCustomer = customerService.getListUserAndPass();
+       for (Customer customer : listNameAndPassCustomer) {
+           if (userName.equals(customer.getCustomerName()) && password.equals(customer.getCustomerPassword())){
+               RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+               HttpSession session = request.getSession();
+               session.setAttribute("userName", userName);
+               requestDispatcher.forward(request, response);
+           }
+       }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/login.jsp");
         request.setAttribute("message", "user name and password is invalid!!");
         requestDispatcher.forward(request, response);

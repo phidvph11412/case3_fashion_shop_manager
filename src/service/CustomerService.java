@@ -15,6 +15,7 @@ public class CustomerService implements ICustomerService {
     private static final String DELETE_Customer_SQL = "delete from customer where customerName = ?;";
     private static final String SELECT_CUSTOMER_NAME = "select customerName,customerPass,Phone,Email,Address from customer where customerName = ? ;";
     private static final String UPDATE_CUSTOMER_NAME = "update customer set  customerPass = ?,Phone = ?,Email = ? ,Address = ? where customerName = ?";
+    private static final String SELECT_NAME_PASS = "select customerName,customerPass from customer";
 
     public CustomerService() {
 
@@ -69,22 +70,78 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer selectCustomer(String customerName) {
-        return null;
+        Customer customer = null;
+        Connection connection = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_NAME);
+            preparedStatement.setString(1, customerName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("customerName");
+                String pass = resultSet.getString("customerPass");
+                String phone = resultSet.getString("Phone");
+                String email = resultSet.getString("Email");
+                String address = resultSet.getNString("Address");
+                customer = new Customer(name, pass, phone, email, address);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return customer;
     }
 
     @Override
     public boolean updateCustomer(Customer customer) throws SQLException {
-        return false;
+        boolean rowUpdate = false;
+        Connection connection = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER_NAME);
+            preparedStatement.setString(5, customer.getCustomerName());
+            preparedStatement.setString(1, customer.getCustomerPassword());
+            preparedStatement.setString(2, customer.getCustomerPhoneNumber());
+            preparedStatement.setString(3, customer.getCustomerEmail());
+            preparedStatement.setString(4, customer.getCustomerAddress());
+            rowUpdate = preparedStatement.executeUpdate() > 0;
+            System.out.println(preparedStatement);
+        } catch (SQLException ex) {
+            printSQLException(ex);
+        }
+        return rowUpdate;
     }
 
     @Override
     public boolean deleteCustomer(String customerName) throws SQLException {
-        return false;
+        boolean rowDeleted;
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(DELETE_Customer_SQL);) {
+            statement.setString(1, customerName);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
     }
 
     @Override
     public List<Customer> searchCustomer(String customerName) throws SQLException {
         return null;
+    }
+
+    @Override
+    public List<Customer>  getListUserAndPass() {
+        List<Customer> customers = new ArrayList<>();
+        Connection connection = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_NAME_PASS);
+            System.out.println(preparedStatement);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("customerName");
+                String pass = resultSet.getString("customerPass");
+                customers.add(new Customer(name, pass));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return customers;
     }
 
     private void printSQLException(SQLException ex) {

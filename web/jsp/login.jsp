@@ -56,6 +56,7 @@
             <button class="btn btn-primary btn-form-submit "
                     type="submit">LOGIN
             </button>
+            <a href="/jsp/register.jsp">Register</a>
         </form>
         <span>${message}</span>
     </main>
