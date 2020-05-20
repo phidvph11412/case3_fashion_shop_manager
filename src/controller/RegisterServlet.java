@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ServletCustomer", urlPatterns = "/Customers")
@@ -51,6 +52,13 @@ public class RegisterServlet extends HttpServlet {
                     throwables.printStackTrace();
                 }
                 break;
+            case "find":
+                try {
+                    search(request, response);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                break;
             default:
                 try {
                     listCustomer(request, response);
@@ -74,6 +82,16 @@ public class RegisterServlet extends HttpServlet {
             case "editCustomer":
                 showEditCustomer(request, response);
                 break;
+            case "delete":
+                try {
+                    deleteCustomer(request, response);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                break;
+            case "showRegister":
+                showRegister(request, response);
+                break;
             default:
                 try {
                     listCustomer(request, response);
@@ -94,6 +112,17 @@ public class RegisterServlet extends HttpServlet {
 
     private void showCustomer(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/editCustomer.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showRegister(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/register.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -135,6 +164,7 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         String customerName = request.getParameter("name");
@@ -144,6 +174,15 @@ public class RegisterServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
         dispatcher.forward(request, response);
     }
+
+    private void search(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        String name = request.getParameter("name");
+        List<Customer> customers = customerService.searchCustomer(name);
+        request.setAttribute("customerList", customers);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/listCustomer.jsp");
+        requestDispatcher.forward(request, response);
+    }
+
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
