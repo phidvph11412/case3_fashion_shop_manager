@@ -29,7 +29,7 @@
             <ul class="nav">
                 <li class="border-bottom-red"><a href="/index.jsp">HOME</a></li>
                 <li><a href="/jsp/login.jsp">LOGIN</a></li>
-                <li><a href="/Customers?action=create">REGISTER</a></li>
+                <li><a href="/jsp/register.jsp">REGISTER</a></li>
                 <li><a href="#footer-contact">CONTACT</a></li>
                 <li><a href="#"><span class="fa-stack ">
                   <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -42,7 +42,7 @@
         </div>
     </header>
     <main class="content">
-        <form method="post" class="form-group form">
+        <form method="post" action="/Customers" class="form-group form">
             <h2 class="text-primary ">Register</h2>
             <div class="form-group input-form ">
                 <label>User Name :</label>
@@ -54,7 +54,7 @@
             </div>
             <div class="form-group input-form ">
                 <label>Re Password :</label>
-                <input type="password" name="" class="form-control ">
+                <input type="password" name="repass" class="form-control ">
             </div>
             <div class="form-group input-form ">
                 <label>Phone Number : </label>
@@ -69,7 +69,7 @@
                 <textarea type="text" name="address" rows="3" class="form-control "></textarea>
             </div>
             <button class="btn btn-primary btn-form-submit "
-                    type="submit">register
+                    type="submit" name="action" value="create">register
             </button>
         </form>
     </main>
