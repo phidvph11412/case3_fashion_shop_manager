@@ -24,25 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa596c0c-e2e2-44d5-9c94-539fc026ccef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jstl_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Oder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/case3_fashion_shop_manager_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/case3_fashion_shop_manager_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case3_fashion_shop_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/case3_fashion_shop_manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/service/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/service/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CustomerService.java" afterDir="false" />
-    </list>
+    <list default="true" id="fa596c0c-e2e2-44d5-9c94-539fc026ccef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +156,7 @@
       <workItem from="1589975373849" duration="639000" />
       <workItem from="1589978816577" duration="7184000" />
       <workItem from="1589997297747" duration="453000" />
-      <workItem from="1590023506166" duration="1285000" />
+      <workItem from="1590023506166" duration="1662000" />
     </task>
     <servers />
   </component>
