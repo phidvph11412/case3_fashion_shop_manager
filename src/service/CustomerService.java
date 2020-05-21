@@ -14,7 +14,7 @@ public class CustomerService implements ICustomerService {
     private static final String INSERT_CUSTOMER_SQL = "INSERT INTO customer (customerName,customerPass,Phone,Email,Address) VALUES (?, ?, ?,?,?);";
     private static final String DELETE_Customer_SQL = "delete from customer where customerName = ?;";
     private static final String SELECT_CUSTOMER_NAME = "select customerName,customerPass,Phone,Email,Address from customer where customerName = ? ;";
-    private static final String UPDATE_CUSTOMER_NAME = "update customer set  customerPass = ?,Phone = ?,Email = ? ,Address = ? where customerName = ?";
+    private static final String UPDATE_CUSTOMER_NAME = "update customer set customerPass = ?,Phone = ?,Email = ? ,Address = ? where customerName = ?";
     private static final String SELECT_NAME_PASS = "select customerName,customerPass from customer";
 
     public CustomerService() {
@@ -124,7 +124,7 @@ public class CustomerService implements ICustomerService {
     public List<Customer> searchCustomer(String customerName) throws SQLException {
         List<Customer> getCustomer = new ArrayList<>();
         Connection connection = getConnection();
-        String  sql = "{call getFindByName(?)}";
+        String sql = "{call getFindByName1(?)}";
         CallableStatement callableStatement = connection.prepareCall(sql);
         String name1 = "%" + customerName + "%";
         callableStatement.setString(1, name1);
@@ -141,7 +141,7 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public List<Customer>  getListUserAndPass() {
+    public List<Customer> getListUserAndPass() {
         List<Customer> customers = new ArrayList<>();
         Connection connection = getConnection();
         try {

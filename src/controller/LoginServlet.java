@@ -2,6 +2,7 @@ package controller;
 
 import model.Customer;
 import service.CustomerService;
+import validate.ValidateCustomer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,5 +31,4 @@ public class LoginServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/Error.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

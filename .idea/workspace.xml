@@ -5,12 +5,55 @@
       <artifact name="case3_fashion_shop_manager:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa596c0c-e2e2-44d5-9c94-539fc026ccef" name="Default Changelist" comment="" />
+    <list default="true" id="fa596c0c-e2e2-44d5-9c94-539fc026ccef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Oder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/case3_fashion_shop_manager_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/case3_fashion_shop_manager_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case3_fashion_shop_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/case3_fashion_shop_manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/controller/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/case3_fashion_shop_manager_war_exploded/WEB-INF/classes/service/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/controller/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/case3_fashion_shop_manager/service/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CustomerService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,8 +73,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.34" ALTERNATIVE_JRE_ENABLED="false">
@@ -117,64 +171,96 @@
       <option name="presentableId" value="Default" />
       <updated>1589969392363</updated>
       <workItem from="1589969395768" duration="612000" />
+      <workItem from="1589975373849" duration="639000" />
+      <workItem from="1589978816577" duration="7184000" />
+      <workItem from="1589997297747" duration="453000" />
+      <workItem from="1590023506166" duration="1285000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="141" y="32" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589969560484">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
     <state x="141" y="32" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.696@0.27.1366.696" timestamp="1589969560484" />
-    <state width="903" height="515" key="GridCell.Tab.0.bottom" timestamp="1589969727369">
+    <state x="491" y="61" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" timestamp="1589992664407">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.0.bottom/0.27.1366.696@0.27.1366.696" timestamp="1589969727369" />
-    <state width="903" height="515" key="GridCell.Tab.0.center" timestamp="1589969727368">
+    <state x="491" y="61" width="374" height="626" key="#com.intellij.ide.util.MemberChooser/0.27.1366.696@0.27.1366.696" timestamp="1589992664407" />
+    <state x="466" y="132" width="735" height="484" key="FileChooserDialogImpl" timestamp="1590023556576">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.0.center/0.27.1366.696@0.27.1366.696" timestamp="1589969727368" />
-    <state width="903" height="515" key="GridCell.Tab.0.left" timestamp="1589969727368">
+    <state x="466" y="132" width="735" height="484" key="FileChooserDialogImpl/0.27.1366.696@0.27.1366.696" timestamp="1590023556576" />
+    <state width="903" height="229" key="GridCell.Tab.0.bottom" timestamp="1589997751408">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.0.left/0.27.1366.696@0.27.1366.696" timestamp="1589969727368" />
-    <state width="903" height="515" key="GridCell.Tab.0.right" timestamp="1589969727369">
+    <state width="903" height="229" key="GridCell.Tab.0.bottom/0.27.1366.696@0.27.1366.696" timestamp="1589997751408" />
+    <state width="903" height="229" key="GridCell.Tab.0.center" timestamp="1589997751407">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.0.right/0.27.1366.696@0.27.1366.696" timestamp="1589969727369" />
-    <state width="903" height="515" key="GridCell.Tab.1.bottom" timestamp="1589969727370">
+    <state width="903" height="229" key="GridCell.Tab.0.center/0.27.1366.696@0.27.1366.696" timestamp="1589997751407" />
+    <state width="903" height="229" key="GridCell.Tab.0.left" timestamp="1589997751407">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.1.bottom/0.27.1366.696@0.27.1366.696" timestamp="1589969727370" />
-    <state width="903" height="515" key="GridCell.Tab.1.center" timestamp="1589969727369">
+    <state width="903" height="229" key="GridCell.Tab.0.left/0.27.1366.696@0.27.1366.696" timestamp="1589997751407" />
+    <state width="903" height="229" key="GridCell.Tab.0.right" timestamp="1589997751407">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.1.center/0.27.1366.696@0.27.1366.696" timestamp="1589969727369" />
-    <state width="903" height="515" key="GridCell.Tab.1.left" timestamp="1589969727369">
+    <state width="903" height="229" key="GridCell.Tab.0.right/0.27.1366.696@0.27.1366.696" timestamp="1589997751407" />
+    <state width="903" height="229" key="GridCell.Tab.1.bottom" timestamp="1589997751409">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.1.left/0.27.1366.696@0.27.1366.696" timestamp="1589969727369" />
-    <state width="903" height="515" key="GridCell.Tab.1.right" timestamp="1589969727369">
+    <state width="903" height="229" key="GridCell.Tab.1.bottom/0.27.1366.696@0.27.1366.696" timestamp="1589997751409" />
+    <state width="903" height="229" key="GridCell.Tab.1.center" timestamp="1589997751408">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.1.right/0.27.1366.696@0.27.1366.696" timestamp="1589969727369" />
-    <state width="903" height="515" key="GridCell.Tab.2.bottom" timestamp="1589969727370">
+    <state width="903" height="229" key="GridCell.Tab.1.center/0.27.1366.696@0.27.1366.696" timestamp="1589997751408" />
+    <state width="903" height="229" key="GridCell.Tab.1.left" timestamp="1589997751408">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.2.bottom/0.27.1366.696@0.27.1366.696" timestamp="1589969727370" />
-    <state width="903" height="515" key="GridCell.Tab.2.center" timestamp="1589969727370">
+    <state width="903" height="229" key="GridCell.Tab.1.left/0.27.1366.696@0.27.1366.696" timestamp="1589997751408" />
+    <state width="903" height="229" key="GridCell.Tab.1.right" timestamp="1589997751408">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.2.center/0.27.1366.696@0.27.1366.696" timestamp="1589969727370" />
-    <state width="903" height="515" key="GridCell.Tab.2.left" timestamp="1589969727370">
+    <state width="903" height="229" key="GridCell.Tab.1.right/0.27.1366.696@0.27.1366.696" timestamp="1589997751408" />
+    <state width="903" height="229" key="GridCell.Tab.2.bottom" timestamp="1589997751410">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.2.left/0.27.1366.696@0.27.1366.696" timestamp="1589969727370" />
-    <state width="903" height="515" key="GridCell.Tab.2.right" timestamp="1589969727370">
+    <state width="903" height="229" key="GridCell.Tab.2.bottom/0.27.1366.696@0.27.1366.696" timestamp="1589997751410" />
+    <state width="903" height="229" key="GridCell.Tab.2.center" timestamp="1589997751409">
       <screen x="0" y="27" width="1366" height="696" />
     </state>
-    <state width="903" height="515" key="GridCell.Tab.2.right/0.27.1366.696@0.27.1366.696" timestamp="1589969727370" />
+    <state width="903" height="229" key="GridCell.Tab.2.center/0.27.1366.696@0.27.1366.696" timestamp="1589997751409" />
+    <state width="903" height="229" key="GridCell.Tab.2.left" timestamp="1589997751409">
+      <screen x="0" y="27" width="1366" height="696" />
+    </state>
+    <state width="903" height="229" key="GridCell.Tab.2.left/0.27.1366.696@0.27.1366.696" timestamp="1589997751409" />
+    <state width="903" height="229" key="GridCell.Tab.2.right" timestamp="1589997751409">
+      <screen x="0" y="27" width="1366" height="696" />
+    </state>
+    <state width="903" height="229" key="GridCell.Tab.2.right/0.27.1366.696@0.27.1366.696" timestamp="1589997751409" />
+    <state x="166" y="27" width="1024" height="696" key="SettingsEditor" timestamp="1589988994703">
+      <screen x="0" y="27" width="1366" height="696" />
+    </state>
+    <state x="166" y="27" width="1024" height="696" key="SettingsEditor/0.27.1366.696@0.27.1366.696" timestamp="1589988994703" />
+    <state x="0" y="27" width="1356" height="696" key="new project wizard" timestamp="1590023558949">
+      <screen x="0" y="27" width="1366" height="696" />
+    </state>
+    <state x="0" y="27" width="1356" height="696" key="new project wizard/0.27.1366.696@0.27.1366.696" timestamp="1590023558949" />
   </component>
 </project>

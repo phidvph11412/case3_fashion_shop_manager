@@ -20,12 +20,6 @@ import java.util.List;
 
 public class RegisterServlet extends HttpServlet {
     private CustomerService customerService;
-    private static final String REGEX_NAME = "[A-Za-z]{5,15}$";
-    private static final String REGEX_PASS = "[A-Za-z]{6,15}\\d{1,5}";
-    private static final String REGEX_REPASS = "[A-Za-z]{6,15}\\d{1,5}";
-    private static final String REGEX_PHONE = "^[+]\\d{2}-\\d{8,13}";
-    private static final String REGEX_EMAIL = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
-    private static final String REGEX_ADDRESS = "[A-Za-z]{1,15}[-|/][A-Za-z]{1,15}[-|/][A-Za-z]{1,15}";
 
     @Override
     public void init() throws ServletException {
@@ -133,14 +127,16 @@ public class RegisterServlet extends HttpServlet {
     }
 
     private void insertCustomer(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        ValidateCustomer validate = new ValidateCustomer();
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         String rePass = request.getParameter("repass");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        if (name.matches(REGEX_NAME) && pass.matches(REGEX_PASS) && rePass.matches(REGEX_REPASS) && phone.matches(REGEX_PHONE) &&
-                email.matches(REGEX_EMAIL) && address.matches(REGEX_ADDRESS) && pass.equals(rePass)) {
+
+        if (validate.validateName(name) && validate.validatePass(pass) && validate.validateRepass(rePass) && validate.validatePhone(phone) &&
+                validate.validateEmail(email) && validate.validateAddress(address) && pass.equals(rePass)) {
             Customer customer = new Customer(name, pass, phone, email, address);
             customerService.insertCustomers(customer);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/register.jsp");
@@ -184,20 +180,33 @@ public class RegisterServlet extends HttpServlet {
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        ValidateCustomer validate = new ValidateCustomer();
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        Customer customer = new Customer(name, pass, phone, email, address);
-        customerService.updateCustomer(customer);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/editCustomer.jsp");
-        try {
-            requestDispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (validate.validatePass(pass) && validate.validatePhone(phone)
+                && validate.validateEmail(email) && validate.validateAddress(address)) {
+            Customer customer = new Customer(name, pass, phone, email, address);
+            customerService.updateCustomer(customer);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/editCustomer.jsp");
+            try {
+                requestDispatcher.forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/Error.jsp");
+            try {
+                requestDispatcher.forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
